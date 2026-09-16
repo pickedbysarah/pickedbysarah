@@ -1,156 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sarah's Picks</title>
+<title>Sarah's Picks</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #faf7fc;
-      color: #2d2530;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #faf7fc;
+  color: #2d2530;
+}
 
-    header {
-      background: linear-gradient(135deg, #6f3f8f, #b76fc7);
-      color: white;
-      text-align: center;
-      padding: 55px 20px;
-    }
+header {
+  background: linear-gradient(135deg, #6f3f8f, #b76fc7);
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 38px;
-    }
+header h1 {
+  margin: 0;
+  font-size: 38px;
+}
 
-    header p {
-      margin: 12px 0 0;
-      font-size: 17px;
-      opacity: 0.95;
-    }
+header p {
+  max-width: 550px;
+  margin: 12px auto 0;
+  line-height: 1.5;
+}
 
-    main {
-      max-width: 700px;
-      margin: auto;
-      padding: 35px 18px;
-    }
+main {
+  max-width: 850px;
+  margin: auto;
+  padding: 35px 18px;
+}
 
-    .intro {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    .intro h2 {
-      font-size: 27px;
-      margin-bottom: 8px;
-    }
+.category {
+  margin-bottom: 45px;
+}
 
-    .intro p {
-      color: #6b626e;
-    }
+.category h2 {
+  text-align: center;
+  font-size: 27px;
+  margin-bottom: 22px;
+}
 
-    .product {
-      background: white;
-      padding: 30px 22px;
-      border-radius: 22px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(70, 40, 80, 0.10);
-    }
+.product {
+  background: white;
+  padding: 27px 22px;
+  margin-bottom: 20px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(70,40,80,0.09);
+}
 
-    .product h2 {
-      margin-top: 0;
-      font-size: 26px;
-    }
+.product h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
 
-    .product p {
-      color: #665e69;
-      line-height: 1.6;
-    }
+.product p {
+  color: #665e69;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
 
-    .button {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 15px 30px;
-      background: #75469a;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 16px;
-    }
+.button {
+  display: inline-block;
+  padding: 14px 27px;
+  background: #75469a;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
 
-    .button:hover {
-      background: #5f387d;
-    }
+.button:hover {
+  background: #5f387d;
+}
 
-    .disclosure {
-      margin-top: 28px;
-      padding: 15px;
-      text-align: center;
-      color: #777;
-      font-size: 13px;
-      line-height: 1.5;
-    }
+.disclosure {
+  background: #f0e9f4;
+  border-radius: 18px;
+  padding: 20px;
+  margin-top: 35px;
+  text-align: center;
+  color: #625969;
+  font-size: 13px;
+  line-height: 1.6;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px 15px 40px;
-      color: #8a818c;
-      font-size: 14px;
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 10px 15px 40px;
+  color: #8a818c;
+  font-size: 14px;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Sarah's Picks ✨</h1>
-    <p>Things worth discovering.</p>
-  </header>
+<header>
+  <h1>Sarah's Picks ✨</h1>
+  <p>
+    A collection of things I find interesting,
+    useful, or worth exploring.
+  </p>
+</header>
 
-  <main>
+<main>
 
-    <section class="intro">
-      <h2>My Featured Picks</h2>
-      <p>Explore products and resources I've selected.</p>
-    </section>
+<section class="intro">
+  <h2>Explore My Picks</h2>
+  <p>
+    Browse some of the products, resources and ideas
+    that caught my attention.
+  </p>
+</section>
 
-    <section class="product">
-      <h2>Tesla MedBed X</h2>
 
-      <p>
-        Interested in learning more? Visit the seller's website
-        for information about Tesla MedBed X.
-      </p>
+<!-- GARDEN -->
 
-      <a
-        class="button"
-        href="https://teslamedbedx.com/digi-store/#aff=sarahallard2222da68"
-        target="_blank"
-        rel="noopener sponsored"
-      >
-        View Product →
-      </a>
-    </section>
+<section class="category">
 
-    <div class="disclosure">
-      <strong>Affiliate Disclosure:</strong>
-      Some links on this website are affiliate links. I may earn a
-      commission if you purchase through them, at no additional cost to you.
-    </div>
+<h2>🌱 Garden & Natural Living</h2>
 
-  </main>
+<div class="product">
+  <h3>Medicinal Seed Kit</h3>
+  <p>
+    Explore a seed kit designed around growing a variety
+    of plants at home.
+  </p>
 
-  <footer>
-    © 2026 Sarah's Picks
-  </footer>
+  <a class="button"
+     href="https://medicinalseedkit.com/kit/#aff=sarahallard2222da68"
+     target="_blank"
+     rel="noopener sponsored">
+     Explore Product →
+  </a>
+</div>
+
+
+<div class="product">
+  <h3>Gardening Kit for Medicinal Plants</h3>
+  <p>
+    A gardening-focused resource for people interested
+    in growing plants at home.
+  </p>
+
+  <a class="button"
+     href="https://gardeningkitformedicinalplants-5zp.plannerpack.co#aff=sarahallard2222da68"
+     target="_blank"
+     rel="noopener sponsored">
+     Explore Product →
+  </a>
+</div>
+
+
+<div class="product">
+  <h3>5-Minute Garden</h3>
+  <p>
+    Discover a gardening resource aimed at making
+    home gardening approachable.
+  </p>
+
+  <a class="button"
+     href="http://www.betterdailyguide.site/ds24/5-minute-garden#aff=sarahallard2222da68"
+     target="_blank"
+     rel="noopener sponsored">
+     Learn More →
+  </a>
+</div>
+
+</section>
+
+
+<!-- PERSONAL GROWTH -->
+
+<section class="category">
+
+<h2>✨ Personal Growth & Learning</h2>
+
+<div class="product">
+  <h3>10-Minute Social Confidence Trick</h3>
+  <p>
+    A personal-development resource focused on
+    social confidence.
+  </p>
+
+  <a class="button"
+     href="http://www.betterdailyguide.site/ds24/the-10-minute-social-confidence-trick#aff=sarahallard2222da68"
+     target="_blank"
+     rel="noopener sponsored">
+     Learn More →
+  </a>
+</div>
+
+
+<div class="product">
+  <h3>VEL Academy Course Bundle</h3>
+  <p>
+    Explore a collection of online learning resources
+    and courses from VEL Academy.
+  </p>
+
+  <a class="button"
+     href="https://vel.academy/course-bundle-d24#aff=sarahallard2222da68"
+     target="_blank"
+     rel="noopener sponsored">
+     Explore Courses →
+  </a>
+</div>
+
+</section>
+
+
+<!-- WELLNESS -->
+
+<section class="category">
+
+<h2>💜 Wellness & Self-Care</h2>
+
+<div class="product">
+  <h3>EchoXen</h3>
+  <p>
+    Visit the seller's website to learn about this
+    wellness product, its ingredients and the information
+    provided by its manufacturer.
+  </p>
+
+  <a class="button"
+     href="https://getechoxen.com/#aff=sarahallard2222da68"
+     target="_blank"
+     rel="noopener sponsored">
+     View Product →
+  </a>
+</div>
+
+
+<div class="product">
+  <h3>Collagen Formula</h3>
+  <p>
+    Explore information from Advanced Bionutritionals
+    about its collagen product and ingredients.
+  </p>
+
+  <a class="button"
+     href="https://www.advancedbionutritionals.com/DS24/Collagen/This-Simple-10-Second-Kitchen-Test/HD.htm#aff=sarahallard2222da68"
+     target="_blank"
+     rel="noopener sponsored">
+     View Product →
+  </a>
+</div>
+
+
+<div class="product">
+  <h3>Pep Tonic</h3>
+  <p>
+    Learn about this wellness product and review
+    information provided by its manufacturer.
+  </p>
+
+  <a class="button"
+     href="https://www.advancedbionutritionals.com/DS24/Pep-Tonic/First-Anti-Aging-Drink/HD.htm#aff=sarahallard2222da68"
+     target="_blank"
+     rel="noopener sponsored">
+     View Product →
+  </a>
+</div>
+
+</section>
+
+
+<div class="disclosure">
+
+<strong>Affiliate Disclosure</strong><br><br>
+
+Some links on Sarah's Picks are affiliate links.
+If you make a purchase through one of these links,
+I may earn a commission at no additional cost to you.
+
+Product information and claims are provided by the
+respective sellers or manufacturers. Sarah's Picks
+does not provide medical advice.
+
+</div>
+
+</main>
+
+<footer>
+© 2026 Sarah's Picks
+</footer>
 
 </body>
 </html>
