@@ -1,6 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <style>
+<head>   /* ---- Sarah's Picks Design Upgrade ---- */
+
+  body {
+    background: linear-gradient(180deg, #f7f3e9 0%, #eef5ed 100%);
+    color: #26352b;
+  }
+
+  .hero {
+    padding: 90px 25px;
+    background: linear-gradient(135deg, #dfeee0, #f6ead7);
+    text-align: center;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+    margin: 0 0 12px;
+    letter-spacing: -2px;
+  }
+
+  .hero p {
+    font-size: 19px;
+    max-width: 600px;
+    margin: 0 auto 28px;
+    color: #526158;
+  }
+
+  .category {
+    max-width: 1050px;
+    margin: 55px auto;
+    padding: 30px 20px;
+  }
+
+  .category > h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  .product {
+    background: rgba(255, 255, 255, 0.92);
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(35, 60, 42, 0.10);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 38px rgba(35, 60, 42, 0.16);
+  }
+
+  .product img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .product h3 {
+    font-size: 25px;
+    margin: 12px 0;
+  }
+
+  .product p {
+    color: #5b685f;
+    font-size: 16px;
+  }
+
+  .button,
+  .product a,
+  .hero a {
+    display: inline-block;
+    background: #315c42;
+    color: white;
+    padding: 13px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .button:hover,
+  .product a:hover,
+  .hero a:hover {
+    transform: scale(1.04);
+    opacity: 0.9;
+  }
+
+  footer {
+    background: #263d30;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 70px;
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+    }
+
+    .category {
+      margin: 30px auto;
+      padding: 15px;
+    }
+
+    .product {
+      padding: 22px;
+      border-radius: 18px;
+    }
+  .tagline {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px !important;
+  font-weight: bold;
+  color: #55745f !important;
+  margin-bottom: 18px !important;
+}
+ <style> 
   body {
     margin: 0;
     font-family: Arial, sans-serif;
