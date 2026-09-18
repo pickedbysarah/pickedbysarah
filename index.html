@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +9,8 @@
   <title>Sarah's Picks</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
     * {
       box-sizing: border-box;
     }
@@ -16,11 +19,25 @@
       scroll-behavior: smooth;
     }
 
+    :root {
+      --forest: #234536;
+      --forest-light: #3f6653;
+      --robin: #9fd8d5;
+      --terracotta: #c8795b;
+      --cream: #faf6ed;
+      --sage: #dce8dd;
+      --text: #29362e;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #faf7f1 0%, #edf4ed 100%);
-      color: #29362e;
+      font-family: 'DM Sans', Arial, sans-serif;
+      background: linear-gradient(
+        180deg,
+        var(--cream) 0%,
+        #edf4ed 100%
+      );
+      color: var(--text);
       line-height: 1.6;
     }
 
@@ -28,30 +45,38 @@
 
     .hero {
       text-align: center;
-      padding: 85px 20px;
-      background: linear-gradient(135deg, #dcebdc, #f4e7d5);
+      padding: 90px 20px;
+      background: linear-gradient(
+        135deg,
+        var(--forest) 0%,
+        #315c48 55%,
+        #47705b 100%
+      );
       border-radius: 0 0 45px 45px;
+      color: white;
     }
 
     .hero h1 {
       margin: 0;
-      font-size: 52px;
-      letter-spacing: -2px;
+      font-family: 'Caveat', cursive;
+      font-size: 72px;
+      font-weight: 700;
+      color: white;
     }
 
     .tagline {
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       font-size: 13px;
-      font-weight: bold;
-      color: #55745f;
-      margin-top: 10px;
+      font-weight: 700;
+      color: var(--robin);
+      margin-top: 8px;
     }
 
     .hero-description {
       max-width: 620px;
-      margin: 20px auto;
-      color: #526158;
+      margin: 20px auto 28px;
+      color: #eef6f1;
       font-size: 18px;
     }
 
@@ -59,70 +84,80 @@
 
     .button {
       display: inline-block;
-      padding: 13px 25px;
-      background: #315c42;
+      padding: 13px 27px;
+      background: var(--terracotta);
       color: white;
       text-decoration: none;
       border-radius: 50px;
-      font-weight: bold;
+      font-weight: 700;
       transition: 0.2s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
-      opacity: 0.88;
+      opacity: 0.9;
     }
 
-    /* MAIN CONTENT */
+    /* MAIN */
 
     main {
-      max-width: 950px;
+      max-width: 1000px;
       margin: auto;
-      padding: 45px 18px;
+      padding: 50px 18px;
     }
 
     .intro {
       text-align: center;
-      margin-bottom: 55px;
+      margin-bottom: 60px;
     }
 
     .intro h2 {
-      font-size: 32px;
-      margin-bottom: 8px;
+      font-family: 'Caveat', cursive;
+      color: var(--forest);
+      font-size: 46px;
+      margin: 0 0 8px;
     }
 
     .intro p {
       color: #637068;
+      max-width: 600px;
+      margin: auto;
     }
 
     /* CATEGORIES */
 
     .category {
-      margin-bottom: 65px;
+      margin-bottom: 75px;
     }
 
     .category > h2 {
       text-align: center;
-      font-size: 30px;
+      color: var(--forest);
+      font-size: 29px;
       margin-bottom: 30px;
     }
 
     /* PRODUCT CARDS */
 
     .product {
-      background: rgba(255,255,255,0.94);
-      max-width: 700px;
-      margin: 25px auto;
-      padding: 30px;
+      background: rgba(255, 255, 255, 0.96);
+      max-width: 720px;
+      margin: 28px auto;
+      padding: 32px;
       text-align: center;
       border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(35,60,42,0.10);
+      border-top: 5px solid var(--robin);
+      box-shadow: 0 10px 30px rgba(35, 69, 54, 0.10);
       transition: 0.25s ease;
+    }
+
+    .product:nth-of-type(even) {
+      border-top-color: var(--terracotta);
     }
 
     .product:hover {
       transform: translateY(-5px);
-      box-shadow: 0 16px 38px rgba(35,60,42,0.15);
+      box-shadow: 0 16px 38px rgba(35, 69, 54, 0.16);
     }
 
     .product img {
@@ -136,35 +171,41 @@
 
     .product h3 {
       margin: 5px 0 10px;
+      color: var(--forest);
       font-size: 24px;
     }
 
     .product p {
-      max-width: 550px;
-      margin: 0 auto 20px;
+      max-width: 560px;
+      margin: 0 auto 22px;
       color: #5f6b63;
     }
 
     /* DISCLOSURE */
 
     .disclosure {
-      max-width: 700px;
-      margin: 60px auto 20px;
-      padding: 25px;
-      background: #e8eee8;
+      max-width: 720px;
+      margin: 65px auto 20px;
+      padding: 28px;
+      background: var(--sage);
       border-radius: 20px;
       text-align: center;
       font-size: 14px;
       color: #58645c;
     }
 
+    .disclosure strong {
+      color: var(--forest);
+      font-size: 16px;
+    }
+
     /* FOOTER */
 
     footer {
-      background: #263d30;
-      color: white;
+      background: var(--forest);
+      color: #eef6f1;
       text-align: center;
-      padding: 35px 20px;
+      padding: 38px 20px;
       margin-top: 50px;
     }
 
@@ -172,23 +213,31 @@
 
     @media (max-width: 600px) {
       .hero {
-        padding: 60px 18px;
+        padding: 65px 18px;
       }
 
       .hero h1 {
-        font-size: 40px;
+        font-size: 56px;
+      }
+
+      .hero-description {
+        font-size: 16px;
       }
 
       main {
-        padding: 30px 15px;
+        padding: 35px 15px;
       }
 
       .product {
-        padding: 22px;
+        padding: 23px 18px;
       }
 
       .category > h2 {
         font-size: 25px;
+      }
+
+      .intro h2 {
+        font-size: 39px;
       }
     }
   </style>
@@ -197,6 +246,7 @@
 <body>
 
   <header class="hero">
+
     <h1>Sarah's Picks ✨</h1>
 
     <p class="tagline">
@@ -211,21 +261,25 @@
     <a class="button" href="#picks">
       Explore My Picks ↓
     </a>
+
   </header>
 
 
   <main id="picks">
 
     <section class="intro">
+
       <h2>Featured Picks</h2>
+
       <p>
-        Browse some of the products, resources and ideas
-        that caught my attention.
+        A little collection of interesting finds, useful resources
+        and products worth exploring.
       </p>
+
     </section>
 
 
-    <!-- GARDEN -->
+    <!-- GARDEN & NATURAL LIVING -->
 
     <section class="category">
 
@@ -233,8 +287,10 @@
 
       <div class="product">
 
-        <img src="IMG_0104.jpeg"
-             alt="Medicinal Seed Kit">
+        <img
+          src="IMG_0104.jpeg"
+          alt="Medicinal Seed Kit"
+        >
 
         <h3>Medicinal Seed Kit</h3>
 
@@ -243,29 +299,12 @@
           a variety of plants at home.
         </p>
 
-        <a class="button"
-           href="https://medicinalseedkit.com/kit/#aff=sarahallard2222da68"
-           target="_blank"
-           rel="noopener sponsored">
-          Explore Product →
-        </a>
-
-      </div>
-
-
-      <div class="product">
-
-        <h3>Gardening Kit for Medicinal Plants</h3>
-
-        <p>
-          A gardening-focused resource for people interested
-          in growing plants at home.
-        </p>
-
-        <a class="button"
-           href="https://gardeningkitformedicinalplants-5zp.plannerpack.co#aff=sarahallard2222da68"
-           target="_blank"
-           rel="noopener sponsored">
+        <a
+          class="button"
+          href="https://medicinalseedkit.com/kit/#aff=sarahallard2222da68"
+          target="_blank"
+          rel="noopener sponsored"
+        >
           Explore Product →
         </a>
 
@@ -277,14 +316,16 @@
         <h3>5-Minute Garden</h3>
 
         <p>
-          Discover a gardening resource aimed at making
-          home gardening approachable.
+          Discover a gardening resource designed to make
+          growing food at home more approachable.
         </p>
 
-        <a class="button"
-           href="http://www.betterdailyguide.site/ds24/5-minute-garden#aff=sarahallard2222da68"
-           target="_blank"
-           rel="noopener sponsored">
+        <a
+          class="button"
+          href="http://www.betterdailyguide.site/ds24/5-minute-garden#aff=sarahallard2222da68"
+          target="_blank"
+          rel="noopener sponsored"
+        >
           Learn More →
         </a>
 
@@ -304,14 +345,16 @@
         <h3>10-Minute Social Confidence Trick</h3>
 
         <p>
-          A personal-development resource focused
-          on social confidence.
+          A personal-development resource focused on
+          building social confidence.
         </p>
 
-        <a class="button"
-           href="http://www.betterdailyguide.site/ds24/the-10-minute-social-confidence-trick#aff=sarahallard2222da68"
-           target="_blank"
-           rel="noopener sponsored">
+        <a
+          class="button"
+          href="http://www.betterdailyguide.site/ds24/the-10-minute-social-confidence-trick#aff=sarahallard2222da68"
+          target="_blank"
+          rel="noopener sponsored"
+        >
           Learn More →
         </a>
 
@@ -327,10 +370,12 @@
           and courses from VEL Academy.
         </p>
 
-        <a class="button"
-           href="https://vel.academy/course-bundle-d24#aff=sarahallard2222da68"
-           target="_blank"
-           rel="noopener sponsored">
+        <a
+          class="button"
+          href="https://vel.academy/course-bundle-d24#aff=sarahallard2222da68"
+          target="_blank"
+          rel="noopener sponsored"
+        >
           Explore Courses →
         </a>
 
@@ -350,15 +395,16 @@
         <h3>EchoXen</h3>
 
         <p>
-          Visit the seller's website to learn about this
-          wellness product and information provided by
-          its manufacturer.
+          Visit the seller's website to explore information
+          about this wellness product.
         </p>
 
-        <a class="button"
-           href="https://getechoxen.com/#aff=sarahallard2222da68"
-           target="_blank"
-           rel="noopener sponsored">
+        <a
+          class="button"
+          href="https://getechoxen.com/#aff=sarahallard2222da68"
+          target="_blank"
+          rel="noopener sponsored"
+        >
           View Product →
         </a>
 
@@ -370,14 +416,16 @@
         <h3>Collagen Formula</h3>
 
         <p>
-          Explore information from Advanced Bionutritionals
-          about its collagen product and ingredients.
+          Explore product and ingredient information
+          provided by Advanced Bionutritionals.
         </p>
 
-        <a class="button"
-           href="https://www.advancedbionutritionals.com/DS24/Collagen/This-Simple-10-Second-Kitchen-Test/HD.htm#aff=sarahallard2222da68"
-           target="_blank"
-           rel="noopener sponsored">
+        <a
+          class="button"
+          href="https://www.advancedbionutritionals.com/DS24/Collagen/This-Simple-10-Second-Kitchen-Test/HD.htm#aff=sarahallard2222da68"
+          target="_blank"
+          rel="noopener sponsored"
+        >
           View Product →
         </a>
 
@@ -389,14 +437,16 @@
         <h3>Pep Tonic</h3>
 
         <p>
-          Learn about this wellness product and review
+          Learn more about this wellness product and review
           information provided by its manufacturer.
         </p>
 
-        <a class="button"
-           href="https://www.advancedbionutritionals.com/DS24/Pep-Tonic/First-Anti-Aging-Drink/HD.htm#aff=sarahallard2222da68"
-           target="_blank"
-           rel="noopener sponsored">
+        <a
+          class="button"
+          href="https://www.advancedbionutritionals.com/DS24/Pep-Tonic/First-Anti-Aging-Drink/HD.htm#aff=sarahallard2222da68"
+          target="_blank"
+          rel="noopener sponsored"
+        >
           View Product →
         </a>
 
@@ -429,8 +479,9 @@
 
 
   <footer>
-    © 2026 Sarah's Picks
+    © 2026 Sarah's Picks • Curated with care 🌿
   </footer>
 
 </body>
+
 </html>
