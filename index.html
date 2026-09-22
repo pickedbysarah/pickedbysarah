@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sarah's Picks</title>
+  <title>Picked by Sarah | Things Worth Sharing</title>
+
+  <meta
+    name="description"
+    content="Picked by Sarah is a curated collection of useful, beautiful and interesting finds for home, garden, beauty, pets, wellness and everyday life."
+  >
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
     * {
       box-sizing: border-box;
@@ -20,713 +25,2031 @@
     }
 
     :root {
-      --forest: #234536;
-      --forest-light: #3f6653;
-      --robin: #9fd8d5;
-      --terracotta: #c8795b;
-      --cream: #faf6ed;
-      --sage: #dce8dd;
-      --text: #29362e;
+      --forest: #1f4937;
+      --deep-forest: #17392c;
+      --forest-light: #426b56;
+
+      --sage: #dce7d9;
+      --sage-dark: #9fb8a4;
+      --sage-soft: #edf2e8;
+
+      --cream: #f6f0e4;
+      --cream-light: #fffdf7;
+
+      --terracotta: #c76543;
+      --terracotta-dark: #ad5235;
+
+      --robin: #9cced0;
+
+      --text: #26362d;
+      --muted: #657269;
+
+      --shadow:
+        0 15px 40px rgba(31, 73, 55, 0.10);
     }
 
     body {
       margin: 0;
       font-family: 'DM Sans', Arial, sans-serif;
-      background: linear-gradient(
-        180deg,
-        var(--cream) 0%,
-        #edf4ed 100%
-      );
       color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(156, 206, 208, 0.12),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 45%,
+          rgba(159, 184, 164, 0.18),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #f8f4e9 0%,
+          #eef3e8 45%,
+          #f5efe2 100%
+        );
+
       line-height: 1.6;
     }
 
-    /* HERO */
 
-    .hero {
-      text-align: center;
-      padding: 90px 20px;
-      background: linear-gradient(
-        135deg,
-        var(--forest) 0%,
-        #315c48 55%,
-        #47705b 100%
-      );
-      border-radius: 0 0 45px 45px;
-      color: white;
+    /* --------------------------------
+       NAVIGATION
+    -------------------------------- */
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(250, 247, 238, 0.94);
+      backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(31, 73, 55, 0.08);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 13px 6%;
     }
 
-    .hero h1 {
-      margin: 0;
-      font-family: 'Caveat', cursive;
-      font-size: 72px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .tagline {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--robin);
-      margin-top: 8px;
-    }
-
-    .hero-description {
-      max-width: 620px;
-      margin: 20px auto 28px;
-      color: #eef6f1;
-      font-size: 18px;
-    }
-
-    /* BUTTONS */
-
-    .button {
-      display: inline-block;
-      padding: 13px 27px;
-      background: var(--terracotta);
-      color: white;
+    .brand {
       text-decoration: none;
-      border-radius: 50px;
+      color: var(--forest);
+    }
+
+    .brand-name {
+      font-family: 'Caveat', cursive;
+      font-size: 36px;
       font-weight: 700;
+      line-height: 0.9;
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 5px;
+
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+
       transition: 0.2s ease;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
+    .nav-links a:hover {
+      color: var(--terracotta);
     }
 
-    /* MAIN */
+    .nav-favorite {
+      background: var(--terracotta);
+      color: white !important;
+
+      padding: 11px 20px;
+      border-radius: 40px;
+    }
+
+
+    /* --------------------------------
+       HERO
+    -------------------------------- */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      min-height: 560px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 90px 8% 120px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(18, 53, 39, 0.96) 0%,
+          rgba(29, 73, 54, 0.88) 42%,
+          rgba(64, 104, 81, 0.70) 70%,
+          rgba(121, 151, 127, 0.62) 100%
+        );
+    }
+
+    /* soft sun */
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 430px;
+      height: 430px;
+
+      right: 7%;
+      top: 20px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255, 226, 179, 0.48) 0%,
+          rgba(255, 226, 179, 0.15) 38%,
+          transparent 68%
+        );
+    }
+
+    /* distant landscape */
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      left: -5%;
+      right: -5%;
+      bottom: -150px;
+
+      height: 310px;
+
+      border-radius: 50% 50% 0 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          #52755e 0%,
+          #274d3b 70%
+        );
+
+      transform: rotate(-2deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      margin: 0 0 15px;
+
+      text-transform: uppercase;
+      letter-spacing: 4px;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      color: #dbe8df;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.03;
+
+      margin: 0 0 22px;
+
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 540px;
+
+      font-size: 19px;
+      line-height: 1.7;
+
+      color: #f3f6f2;
+
+      margin-bottom: 30px;
+    }
+
+    .hero-button {
+      display: inline-block;
+
+      background: var(--terracotta);
+      color: white;
+
+      text-decoration: none;
+
+      padding: 15px 29px;
+
+      border-radius: 50px;
+
+      font-weight: 700;
+
+      box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15);
+
+      transition: 0.25s ease;
+    }
+
+    .hero-button:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-3px);
+    }
+
+    .hero-note {
+      position: absolute;
+
+      right: 8%;
+      top: 130px;
+
+      width: 220px;
+
+      padding: 28px 24px;
+
+      background: rgba(255, 251, 240, 0.94);
+
+      color: var(--forest);
+
+      text-align: center;
+
+      font-family: 'Caveat', cursive;
+      font-size: 26px;
+      line-height: 1.2;
+
+      transform: rotate(2deg);
+
+      box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.18);
+
+      z-index: 5;
+    }
+
+
+    /* --------------------------------
+       CATEGORY NAVIGATION
+    -------------------------------- */
+
+    .category-menu {
+      position: relative;
+      z-index: 20;
+
+      max-width: 1150px;
+
+      margin: -50px auto 60px;
+
+      padding: 26px 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 253, 247, 0.98),
+          rgba(237, 242, 232, 0.98)
+        );
+
+      border-radius: 28px;
+
+      box-shadow: var(--shadow);
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+
+      gap: 12px;
+    }
+
+    .category-link {
+      text-decoration: none;
+      color: var(--text);
+
+      text-align: center;
+
+      padding: 12px 7px;
+
+      border-radius: 18px;
+
+      transition: 0.25s ease;
+    }
+
+    .category-link:hover {
+      background: white;
+      transform: translateY(-4px);
+    }
+
+    .category-icon {
+      width: 56px;
+      height: 56px;
+
+      margin: auto auto 8px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--sage-soft);
+
+      border: 1px solid #c9d7ca;
+
+      font-size: 27px;
+    }
+
+    .category-link strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .category-link span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+
+    /* --------------------------------
+       MAIN CONTENT
+    -------------------------------- */
 
     main {
-      max-width: 1000px;
+      max-width: 1180px;
       margin: auto;
-      padding: 50px 18px;
+
+      padding: 10px 22px 80px;
     }
 
     .intro {
       text-align: center;
-      margin-bottom: 60px;
+
+      max-width: 720px;
+
+      margin: 20px auto 80px;
+    }
+
+    .intro-label {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      color: var(--forest-light);
     }
 
     .intro h2 {
-      font-family: 'Caveat', cursive;
-      color: var(--forest);
-      font-size: 46px;
-      margin: 0 0 8px;
+      font-family: 'Playfair Display', serif;
+
+      font-size: clamp(38px, 5vw, 58px);
+
+      margin: 5px 0 13px;
+
+      color: var(--deep-forest);
     }
 
     .intro p {
-      color: #637068;
-      max-width: 600px;
-      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
     }
 
-    /* CATEGORIES */
+    .little-leaf {
+      font-family: 'Caveat', cursive;
+
+      color: var(--forest-light);
+
+      font-size: 28px;
+
+      margin-top: 15px;
+    }
+
+
+    /* --------------------------------
+       CATEGORY SECTIONS
+    -------------------------------- */
 
     .category {
-      margin-bottom: 75px;
+      margin-bottom: 95px;
+
+      scroll-margin-top: 100px;
     }
 
-    .category > h2 {
+    .category-heading {
       text-align: center;
-      color: var(--forest);
-      font-size: 29px;
-      margin-bottom: 30px;
+
+      margin-bottom: 35px;
     }
 
-    /* PRODUCT CARDS */
+    .category-heading .small {
+      text-transform: uppercase;
+
+      font-size: 11px;
+      letter-spacing: 4px;
+      font-weight: 700;
+
+      color: var(--terracotta);
+    }
+
+    .category-heading h2 {
+      font-family: 'Playfair Display', serif;
+
+      color: var(--deep-forest);
+
+      font-size: 38px;
+
+      margin: 3px 0 8px;
+    }
+
+    .category-heading p {
+      color: var(--muted);
+
+      margin: auto;
+
+      max-width: 570px;
+    }
+
+
+    /* --------------------------------
+       PRODUCT GRID
+    -------------------------------- */
+
+    .product-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 25px;
+    }
 
     .product {
-      background: rgba(255, 255, 255, 0.96);
-      max-width: 720px;
-      margin: 28px auto;
-      padding: 32px;
-      text-align: center;
-      border-radius: 24px;
-      border-top: 5px solid var(--robin);
-      box-shadow: 0 10px 30px rgba(35, 69, 54, 0.10);
-      transition: 0.25s ease;
+      position: relative;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.97),
+          rgba(252, 249, 241, 0.98)
+        );
+
+      padding: 30px;
+
+      border-radius: 25px;
+
+      border:
+        1px solid rgba(50, 91, 68, 0.10);
+
+      box-shadow:
+        0 12px 35px rgba(31, 73, 55, 0.09);
+
+      display: flex;
+      flex-direction: column;
+
+      transition: 0.3s ease;
+
+      overflow: hidden;
     }
 
-    .product:nth-of-type(even) {
-      border-top-color: var(--terracotta);
+    .product::before {
+      content: "";
+
+      position: absolute;
+
+      height: 5px;
+
+      left: 0;
+      right: 0;
+      top: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--forest-light),
+          var(--robin),
+          var(--terracotta)
+        );
     }
 
     .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 38px rgba(35, 69, 54, 0.16);
+      transform: translateY(-7px);
+
+      box-shadow:
+        0 20px 50px rgba(31, 73, 55, 0.15);
     }
 
     .product img {
       width: 100%;
-      max-width: 420px;
-      height: auto;
-      display: block;
-      margin: 0 auto 22px;
+
+      max-height: 320px;
+
+      object-fit: cover;
+
       border-radius: 18px;
+
+      margin-bottom: 20px;
     }
 
     .product h3 {
-      margin: 5px 0 10px;
-      color: var(--forest);
-      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+
+      font-size: 25px;
+      line-height: 1.25;
+
+      color: var(--deep-forest);
+
+      margin: 4px 0 12px;
     }
 
     .product p {
-      max-width: 560px;
-      margin: 0 auto 22px;
-      color: #5f6b63;
+      color: #5d6b62;
+
+      margin: 0 0 24px;
+
+      flex-grow: 1;
     }
 
-    /* DISCLOSURE */
+    .button {
+      display: inline-block;
+
+      align-self: flex-start;
+
+      padding: 12px 23px;
+
+      border-radius: 40px;
+
+      background: var(--terracotta);
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      transition: 0.25s ease;
+    }
+
+    .button:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-2px);
+    }
+
+
+    /* --------------------------------
+       PERSONAL FAVORITE BADGE
+    -------------------------------- */
+
+    .favorite-card {
+      border:
+        1px solid rgba(31, 73, 55, 0.25);
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #f0f5ed
+        );
+    }
+
+    .tried-badge {
+      display: inline-flex;
+
+      align-items: center;
+
+      width: fit-content;
+
+      padding: 7px 13px;
+
+      margin-bottom: 12px;
+
+      border-radius: 30px;
+
+      background: var(--forest);
+
+      color: white;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
+    /* --------------------------------
+       SARAH'S FAVORITES
+    -------------------------------- */
+
+    .favorites {
+      margin: 30px 0 100px;
+
+      padding: 60px 40px;
+
+      border-radius: 38px;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(156, 206, 208, 0.28),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #dfe9dc,
+          #f3f1e6
+        );
+
+      box-shadow: var(--shadow);
+    }
+
+    .favorites-title {
+      text-align: center;
+
+      margin-bottom: 35px;
+    }
+
+    .favorites-title span {
+      text-transform: uppercase;
+
+      letter-spacing: 4px;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      color: var(--forest-light);
+    }
+
+    .favorites-title h2 {
+      font-family: 'Playfair Display', serif;
+
+      font-size: 45px;
+
+      margin: 4px 0 8px;
+
+      color: var(--deep-forest);
+    }
+
+
+    /* --------------------------------
+       VALUES / TRUST SECTION
+    -------------------------------- */
+
+    .values {
+      margin-top: 70px;
+
+      padding: 60px 7%;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--deep-forest),
+          #2f654c
+        );
+    }
+
+    .values-inner {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 35px;
+
+      text-align: center;
+    }
+
+    .value-icon {
+      font-size: 31px;
+    }
+
+    .value h3 {
+      margin: 8px 0 6px;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: 21px;
+    }
+
+    .value p {
+      margin: 0;
+
+      color: #dce8df;
+
+      font-size: 14px;
+    }
+
+
+    /* --------------------------------
+       QUOTE
+    -------------------------------- */
+
+    .quote-section {
+      text-align: center;
+
+      padding: 75px 20px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #e8eee2,
+          #f6f0e4
+        );
+    }
+
+    .quote-section blockquote {
+      max-width: 700px;
+
+      margin: auto;
+
+      font-family: 'Caveat', cursive;
+
+      color: var(--forest);
+
+      font-size: 42px;
+      line-height: 1.2;
+    }
+
+    .quote-section p {
+      color: var(--muted);
+    }
+
+
+    /* --------------------------------
+       DISCLOSURE
+    -------------------------------- */
 
     .disclosure {
-      max-width: 720px;
-      margin: 65px auto 20px;
-      padding: 28px;
-      background: var(--sage);
-      border-radius: 20px;
+      max-width: 850px;
+
+      margin: 70px auto 30px;
+
+      padding: 28px 35px;
+
+      background: rgba(255, 253, 247, 0.85);
+
+      border:
+        1px solid rgba(31, 73, 55, 0.13);
+
+      border-radius: 22px;
+
       text-align: center;
-      font-size: 14px;
-      color: #58645c;
+
+      font-size: 13px;
+
+      color: #657269;
     }
 
     .disclosure strong {
+      display: block;
+
+      margin-bottom: 7px;
+
       color: var(--forest);
-      font-size: 16px;
+
+      font-size: 15px;
     }
 
-    /* FOOTER */
+
+    /* --------------------------------
+       FOOTER SCENERY
+    -------------------------------- */
 
     footer {
-      background: var(--forest);
-      color: #eef6f1;
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        70px 20px
+        120px;
+
       text-align: center;
-      padding: 38px 20px;
-      margin-top: 50px;
+
+      color: var(--forest);
+
+      background:
+        linear-gradient(
+          180deg,
+          #f5efe2 0%,
+          #d9e4d4 100%
+        );
     }
 
-    /* MOBILE */
+    .footer-brand {
+      font-family: 'Caveat', cursive;
 
-    @media (max-width: 600px) {
+      font-size: 43px;
+
+      font-weight: 700;
+    }
+
+    .footer-tag {
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      font-size: 10px;
+
+      margin-bottom: 25px;
+    }
+
+    .footer-links {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 22px;
+
+      margin-bottom: 25px;
+    }
+
+    .footer-links a {
+      color: var(--forest);
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--terracotta);
+    }
+
+    .copyright {
+      font-size: 12px;
+      color: #657269;
+    }
+
+    /* Mountain scenery */
+
+    .mountains-back,
+    .mountains-front {
+      position: absolute;
+
+      pointer-events: none;
+
+      left: -10%;
+      width: 120%;
+
+      border-radius: 50% 50% 0 0;
+    }
+
+    .mountains-back {
+      bottom: -145px;
+
+      height: 230px;
+
+      background: #91aa94;
+
+      transform: rotate(2deg);
+    }
+
+    .mountains-front {
+      bottom: -175px;
+
+      height: 245px;
+
+      background: #416b52;
+
+      transform: rotate(-2deg);
+    }
+
+
+    /* --------------------------------
+       MOBILE
+    -------------------------------- */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .top-nav {
+        justify-content: center;
+      }
+
       .hero {
-        padding: 65px 18px;
+        min-height: 530px;
+
+        padding:
+          80px 30px
+          120px;
+
+        text-align: center;
+
+        justify-content: center;
+      }
+
+      .hero-content {
+        max-width: 650px;
+      }
+
+      .hero-note {
+        display: none;
+      }
+
+      .category-menu {
+        grid-template-columns:
+          repeat(3, 1fr);
+
+        margin:
+          -45px 18px
+          55px;
+      }
+
+      .values-inner {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .brand-name {
+        font-size: 32px;
+      }
+
+      .hero {
+        min-height: 500px;
+
+        padding:
+          70px 22px
+          105px;
       }
 
       .hero h1 {
-        font-size: 56px;
+        font-size: 47px;
       }
 
       .hero-description {
         font-size: 16px;
       }
 
+      .category-menu {
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        padding: 20px 12px;
+      }
+
       main {
-        padding: 35px 15px;
+        padding:
+          5px 15px
+          60px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
       }
 
       .product {
-        padding: 23px 18px;
+        padding: 25px 21px;
       }
 
-      .category > h2 {
-        font-size: 25px;
+      .category-heading h2 {
+        font-size: 31px;
       }
 
-      .intro h2 {
-        font-size: 39px;
+      .favorites {
+        padding: 45px 18px;
+
+        border-radius: 27px;
       }
+
+      .favorites-title h2 {
+        font-size: 36px;
+      }
+
+      .quote-section blockquote {
+        font-size: 34px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
+
+  <!-- TOP NAV -->
+
+  <nav class="top-nav">
+
+    <a class="brand" href="#">
+      <div class="brand-name">Picked by Sarah 🌿</div>
+      <span class="brand-tagline">Things Worth Sharing</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#garden">Garden</a>
+      <a href="#beauty">Beauty</a>
+      <a href="#pets">Pets</a>
+      <a href="#home">Home</a>
+      <a href="#growth">Personal Growth</a>
+      <a class="nav-favorite" href="#favorites">
+        My Favorites ♡
+      </a>
+    </div>
+
+  </nav>
+
+
+
+  <!-- HERO -->
 
   <header class="hero">
 
-    <h1>Sarah's Picks ✨</h1>
+    <div class="hero-content">
 
-    <p class="tagline">
-      Discover • Explore • Live Better
-    </p>
+      <p class="eyebrow">
+        Real Finds. Real Life.
+      </p>
 
-    <p class="hero-description">
-      A collection of products, resources and interesting finds
-      I've discovered and wanted to share.
-    </p>
+      <h1>
+        Thoughtfully Chosen
+        for Brighter Everyday.
+      </h1>
 
-    <a class="button" href="#picks">
-      Explore My Picks ↓
-    </a>
+      <p class="hero-description">
+        Practical. Beautiful. Meaningful.
+        A growing collection of products,
+        resources and everyday finds that
+        caught my attention and felt worth sharing.
+      </p>
+
+      <a class="hero-button" href="#picks">
+        Explore My Picks →
+      </a>
+
+    </div>
+
+
+    <div class="hero-note">
+      A happier home,<br>
+      a little more joy,<br>
+      and good things<br>
+      worth sharing. ♡
+    </div>
 
   </header>
 
 
+
+  <!-- QUICK CATEGORIES -->
+
+  <div class="category-menu">
+
+    <a class="category-link" href="#garden">
+      <div class="category-icon">🌿</div>
+      <strong>Garden</strong>
+      <span>Grow a little joy</span>
+    </a>
+
+    <a class="category-link" href="#beauty">
+      <div class="category-icon">✨</div>
+      <strong>Beauty</strong>
+      <span>Feel good daily</span>
+    </a>
+
+    <a class="category-link" href="#pets">
+      <div class="category-icon">🐾</div>
+      <strong>Pets</strong>
+      <span>For furry friends</span>
+    </a>
+
+    <a class="category-link" href="#home">
+      <div class="category-icon">⌂</div>
+      <strong>Home</strong>
+      <span>Comforts that matter</span>
+    </a>
+
+    <a class="category-link" href="#growth">
+      <div class="category-icon">📖</div>
+      <strong>Growth</strong>
+      <span>Learn & explore</span>
+    </a>
+
+    <a class="category-link" href="#wellness">
+      <div class="category-icon">☀️</div>
+      <strong>Wellness</strong>
+      <span>Everyday wellbeing</span>
+    </a>
+
+  </div>
+
+
+
   <main id="picks">
+
+
+    <!-- INTRO -->
 
     <section class="intro">
 
-      <h2>Featured Picks</h2>
+      <span class="intro-label">
+        Explore • Shop • Discover
+      </span>
+
+      <h2>
+        Things Worth Sharing
+      </h2>
 
       <p>
-        A little collection of interesting finds, useful resources
-        and products worth exploring.
+        From things I've personally tried and loved
+        to interesting finds I think are worth exploring,
+        this is my little corner of the internet for
+        sharing good things.
       </p>
 
-    </section>
-
-
-    <!-- GARDEN & NATURAL LIVING -->
-
-    <section class="category">
-
-      <h2>🌱 Garden & Natural Living</h2>
-
-      <div class="product">
-
-        <img
-          src="IMG_0104.jpeg"
-          alt="Medicinal Seed Kit"
-        >
-
-        <h3>Medicinal Seed Kit</h3>
-
-        <p>
-          Explore a seed kit designed around growing
-          a variety of plants at home.
-        </p>
-
-        <a
-          class="button"
-          href="https://medicinalseedkit.com/kit/#aff=sarahallard2222da68"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          Explore Product →
-        </a>
-
-      </div>
-
-
-      <div class="product">
-
-        <h3>5-Minute Garden</h3>
-
-        <p>
-          Discover a gardening resource designed to make
-          growing food at home more approachable.
-        </p>
-
-        <a
-          class="button"
-          href="http://www.betterdailyguide.site/ds24/5-minute-garden#aff=sarahallard2222da68"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          Learn More →
-        </a>
-
-      </div>       </div>
-
-
-      <!-- AMAZON - LETPOT HYDROPONIC GARDEN -->
-
-      <div class="product">
-
-        <h3>LetPot 12-Pod Hydroponic Indoor Garden</h3>
-
-        <p>
-          An indoor hydroponic growing system with 12 growing pods,
-          a full-spectrum LED grow light, adjustable stand, and
-          vegetable and fruit growing modes. A neat option for
-          growing herbs and plants indoors year-round.
-        </p>
-
-        <a
-          class="button"
-          href="https://link.amazon/B07et0Yfk"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
-
+      <div class="little-leaf">
+        ❧ Picked with care ❧
       </div>
 
     </section>
 
-      <!-- AMAZON - LION'S MANE GROW KIT -->
 
-      <div class="product">
 
-        <h3>Lion's Mane Mushroom Growing Kit</h3>
+    <!-- SARAH'S FAVORITES -->
+
+    <section class="favorites" id="favorites">
+
+      <div class="favorites-title">
+
+        <span>Personally Tried</span>
+
+        <h2>Some of My Favorites</h2>
 
         <p>
-          A 6 lb indoor mushroom growing kit designed for
-          growing Lion's Mane mushrooms at home. An interesting
-          pick for anyone who wants to try growing their own
-          mushrooms indoors.
+          These ones aren't just finds —
+          I've actually used them myself.
         </p>
 
-        <a
-          class="button"
-          href="https://link.amazon/B0fYhQmDy"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <div class="product favorite-card">
+
+          <div class="tried-badge">
+            ★ Personally Tried & Loved
+          </div>
+
+          <h3>
+            EUREKA Mighty Mite Canister Vacuum
+          </h3>
+
+          <p>
+            A lightweight corded canister vacuum
+            for carpets and hard floors. One of my
+            home finds that I've actually used and
+            would recommend based on my own experience.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B092x2imK"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+        <div class="product favorite-card">
+
+          <div class="tried-badge">
+            ★ Personally Tried & Loved
+          </div>
+
+          <h3>
+            Chemist At Play Body Wash Duo
+          </h3>
+
+          <p>
+            I've used these body washes myself
+            and really enjoyed them, so they're
+            one of my personal beauty and
+            self-care picks.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B0dCEscmv"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
 
       </div>
+
+    </section>
+
+
+
+    <!-- GARDEN -->
+
+    <section class="category" id="garden">
+
+      <div class="category-heading">
+
+        <span class="small">
+          Grow • Create • Explore
+        </span>
+
+        <h2>🌿 Garden & Natural Living</h2>
+
+        <p>
+          Interesting finds for growing,
+          gardening and bringing a little
+          more nature into everyday life.
+        </p>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <div class="product">
+
+          <img
+            src="IMG_0104.jpeg"
+            alt="Medicinal Seed Kit"
+          >
+
+          <h3>Medicinal Seed Kit</h3>
+
+          <p>
+            Explore a seed kit designed around
+            growing a variety of plants at home.
+          </p>
+
+          <a
+            class="button"
+            href="https://medicinalseedkit.com/kit/#aff=sarahallard2222da68"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            Explore Product →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>5-Minute Garden</h3>
+
+          <p>
+            Discover a gardening resource designed
+            to make growing food at home more
+            approachable.
+          </p>
+
+          <a
+            class="button"
+            href="http://www.betterdailyguide.site/ds24/5-minute-garden#aff=sarahallard2222da68"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            Learn More →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>
+            LetPot 12-Pod Hydroponic Indoor Garden
+          </h3>
+
+          <p>
+            An indoor hydroponic growing system with
+            12 growing pods, a full-spectrum LED grow
+            light, adjustable stand, and vegetable and
+            fruit growing modes.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B07et0Yfk"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>
+            Lion's Mane Mushroom Growing Kit
+          </h3>
+
+          <p>
+            A 6 lb indoor mushroom growing kit
+            designed for growing Lion's Mane mushrooms
+            at home.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B0fYhQmDy"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- BEAUTY -->
+
+    <section class="category" id="beauty">
+
+      <div class="category-heading">
+
+        <span class="small">
+          Simple • Fresh • Everyday
+        </span>
+
+        <h2>✨ Beauty & Self-Care</h2>
+
+        <p>
+          Beauty and self-care finds for
+          adding a little something nice
+          to your everyday routine.
+        </p>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <div class="product favorite-card">
+
+          <div class="tried-badge">
+            ★ Personally Tried & Loved
+          </div>
+
+          <h3>Chemist At Play Body Wash Duo</h3>
+
+          <p>
+            I've used these body washes myself
+            and really enjoyed them, so they're
+            one of my personal beauty and
+            self-care picks.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B0dCEscmv"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>
+            ATTITUDE Oceanly Serum-Infused Mascara
+          </h3>
+
+          <p>
+            A brown vegan mascara designed to
+            add length and volume, with a
+            serum-infused formula.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B02GpLVKA"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>
+            ATTITUDE Hyaluronic Acid Face Serum
+          </h3>
+
+          <p>
+            A fragrance-free, vegan facial serum
+            featuring hyaluronic acid in a compact
+            30 mL size.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B06Z9HQt4"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>
+            Red & Near-Infrared LED Face Mask
+          </h3>
+
+          <p>
+            An at-home LED skincare device featuring
+            multiple light modes, an adjustable
+            10–30 minute timer, remote control and
+            a flexible silicone design.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/A05lwC9Or"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>
+            ATTITUDE Oceanly Tinted SPF 30 Stick
+          </h3>
+
+          <p>
+            A Canadian-made, unscented tinted SPF 30
+            stick featuring zinc oxide and broad-spectrum
+            UVA/UVB protection in a convenient
+            plastic-free format.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B08Zb74Xw"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PETS -->
+
+    <section class="category" id="pets">
+
+      <div class="category-heading">
+
+        <span class="small">
+          For Our Furry Friends
+        </span>
+
+        <h2>🐾 Pet Picks</h2>
+
+        <p>
+          Finds for the animals who make
+          home feel a little more like home.
+        </p>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <div class="product">
+
+          <h3>
+            PURICA Pet Recovery Extra Strength
+          </h3>
+
+          <p>
+            A chewable pet supplement made for
+            dogs and cats. Check the Amazon listing
+            for complete ingredients and product
+            information.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B04bo71U1"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- HOME -->
+
+    <section class="category" id="home">
+
+      <div class="category-heading">
+
+        <span class="small">
+          Comfort • Function • Home
+        </span>
+
+        <h2>🏡 Home Finds</h2>
+
+        <p>
+          Practical little upgrades and useful
+          finds for making everyday spaces work
+          a little better.
+        </p>
+
+      </div>
+
+
+      <div class="product-grid">
+
+
+        <div class="product">
+
+          <h3>
+            Filtered Handheld Shower Head
+          </h3>
+
+          <p>
+            A matte black handheld shower head
+            featuring high-pressure water flow,
+            filtration and 10 spray modes.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B0j6B10BY"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+        <div class="product favorite-card">
+
+          <div class="tried-badge">
+            ★ Personally Tried & Loved
+          </div>
+
+          <h3>
+            EUREKA Mighty Mite Canister Vacuum
+          </h3>
+
+          <p>
+            A lightweight corded canister vacuum
+            for carpets and hard floors. One of my
+            home finds that I've actually used and
+            would recommend based on my own experience.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B092x2imK"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
     <!-- PERSONAL GROWTH -->
 
-    </section>
+    <section class="category" id="growth">
 
+      <div class="category-heading">
 
-    <!-- PERSONAL GROWTH -->
+        <span class="small">
+          Learn • Reflect • Grow
+        </span>
 
-    <section class="category">
-
-      <h2>✨ Personal Growth & Learning</h2>
-
-      <div class="product">
-
-        <h3>10-Minute Social Confidence Trick</h3>
+        <h2>📖 Personal Growth & Learning</h2>
 
         <p>
-          A personal-development resource focused on
-          building social confidence.
+          Books, courses and resources for
+          curiosity, learning and personal growth.
         </p>
-
-        <a
-          class="button"
-          href="http://www.betterdailyguide.site/ds24/the-10-minute-social-confidence-trick#aff=sarahallard2222da68"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          Learn More →
-        </a>
 
       </div>
 
 
-      <div class="product">
+      <div class="product-grid">
 
-        <h3>VEL Academy Course Bundle</h3>
 
-        <p>
-          Explore a collection of online learning resources
-          and courses from VEL Academy.
-        </p>
+        <div class="product">
 
-        <a
-          class="button"
-          href="https://vel.academy/course-bundle-d24#aff=sarahallard2222da68"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          Explore Courses →
-        </a>
+          <h3>
+            The Atomic Habits Workbook
+          </h3>
+
+          <p>
+            The official companion workbook to
+            Atomic Habits, with exercises designed
+            to help readers put habit-building ideas
+            into practice and work toward personal goals.
+          </p>
+
+          <a
+            class="button"
+            href="https://link.amazon/B01M8BX1V"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>
+            10-Minute Social Confidence Trick
+          </h3>
+
+          <p>
+            A personal-development resource focused
+            on building social confidence.
+          </p>
+
+          <a
+            class="button"
+            href="http://www.betterdailyguide.site/ds24/the-10-minute-social-confidence-trick#aff=sarahallard2222da68"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            Learn More →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>
+            VEL Academy Course Bundle
+          </h3>
+
+          <p>
+            Explore a collection of online
+            learning resources and courses
+            from VEL Academy.
+          </p>
+
+          <a
+            class="button"
+            href="https://vel.academy/course-bundle-d24#aff=sarahallard2222da68"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            Explore Courses →
+          </a>
+
+        </div>
+
 
       </div>
 
     </section>
+
 
 
     <!-- WELLNESS -->
 
-    <section class="category">
+    <section class="category" id="wellness">
 
-      <h2>💜 Wellness & Self-Care</h2>
+      <div class="category-heading">
 
-      <div class="product">
+        <span class="small">
+          Explore • Discover • Wellbeing
+        </span>
 
-        <h3>EchoXen</h3>
+        <h2>☀️ Wellness & Self-Care</h2>
 
         <p>
-          Visit the seller's website to explore information
-          about this wellness product.
+          A collection of wellness products
+          and resources worth exploring.
         </p>
-
-        <a
-          class="button"
-          href="https://getechoxen.com/#aff=sarahallard2222da68"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View Product →
-        </a>
 
       </div>
 
 
-      <div class="product">
-
-        <h3>Collagen Formula</h3>
-
-        <p>
-          Explore product and ingredient information
-          provided by Advanced Bionutritionals.
-        </p>
-
-        <a
-          class="button"
-          href="https://www.advancedbionutritionals.com/DS24/Collagen/This-Simple-10-Second-Kitchen-Test/HD.htm#aff=sarahallard2222da68"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View Product →
-        </a>
-
-      </div>
+      <div class="product-grid">
 
 
-      <div class="product">
+        <div class="product">
 
-        <h3>Pep Tonic</h3>
+          <h3>EchoXen</h3>
 
-        <p>
-          Learn more about this wellness product and review
-          information provided by its manufacturer.
-        </p>
+          <p>
+            Visit the seller's website to explore
+            information about this wellness product.
+          </p>
 
-        <a
-          class="button"
-          href="https://www.advancedbionutritionals.com/DS24/Pep-Tonic/First-Anti-Aging-Drink/HD.htm#aff=sarahallard2222da68"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View Product →
-        </a>
+          <a
+            class="button"
+            href="https://getechoxen.com/#aff=sarahallard2222da68"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View Product →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>Collagen Formula</h3>
+
+          <p>
+            Explore product and ingredient information
+            provided by Advanced Bionutritionals.
+          </p>
+
+          <a
+            class="button"
+            href="https://www.advancedbionutritionals.com/DS24/Collagen/This-Simple-10-Second-Kitchen-Test/HD.htm#aff=sarahallard2222da68"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View Product →
+          </a>
+
+        </div>
+
+
+        <div class="product">
+
+          <h3>Pep Tonic</h3>
+
+          <p>
+            Learn more about this wellness product
+            and review information provided by its
+            manufacturer.
+          </p>
+
+          <a
+            class="button"
+            href="https://www.advancedbionutritionals.com/DS24/Pep-Tonic/First-Anti-Aging-Drink/HD.htm#aff=sarahallard2222da68"
+            target="_blank"
+            rel="noopener sponsored"
+          >
+            View Product →
+          </a>
+
+        </div>
+
 
       </div>
 
     </section>
 
-    <!-- PET PICKS -->
 
-    <section class="category">
 
-      <h2>🐾 Pet Picks</h2>
-
-      <div class="product">
-
-        <h3>PURICA Pet Recovery Extra Strength</h3>
-
-        <p>
-          A chewable pet supplement made for dogs and cats.
-          This 60-tablet pack is designed as a convenient
-          addition to your pet-care routine. Check the Amazon
-          listing for full ingredients and product information.
-        </p>
-
-        <a
-          class="button"
-          href="https://link.amazon/B04bo71U1"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
-
-      </div>
-
-    </section>
-        <!-- BEAUTY & SELF-CARE -->
-
-    <section class="category">
-
-      <h2>✨ Beauty & Self-Care</h2>
-
-      <div class="product">
-
-        <h3>Chemist At Play Body Wash Duo</h3>
-
-         <p>
-          ⭐ Personally tried & loved. I've used these body washes
-          myself and really enjoyed them, so they're one of my
-          personal beauty and self-care picks.
-        </p>
-
-        <a
-          class="button"
-          href="https://link.amazon/B0dCEscmv"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
-
-      </div>
-      <!-- AMAZON - ATTITUDE MASCARA -->
-
-      <div class="product">
-
-        <h3>ATTITUDE Oceanly Serum-Infused Mascara</h3>
-
-        <p>
-          A brown vegan mascara designed to add length and volume,
-          with a serum-infused formula. A beauty pick for anyone
-          looking for an everyday alternative to traditional black mascara.
-        </p>
-
-        <a
-          class="button"
-          href="https://link.amazon/B02GpLVKA"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
-
-      </div>
-            <!-- AMAZON - ATTITUDE HYALURONIC ACID SERUM -->
-
-      <div class="product">
-
-        <h3>ATTITUDE Hyaluronic Acid Face Serum</h3>
-
-        <p>
-          A fragrance-free, vegan facial serum featuring
-          hyaluronic acid. A simple skincare pick in a
-          compact 30 mL size.
-        </p>
-
-        <a
-          class="button"
-          href="https://link.amazon/B06Z9HQt4"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
-
-      </div>
-            <!-- AMAZON - LED FACE MASK -->
-
-      <div class="product">
-
-        <h3>Red & Near-Infrared LED Face Mask</h3>
-
-        <p>
-          An at-home LED skincare device featuring multiple
-          light modes, an adjustable 10–30 minute timer,
-          remote control and a flexible silicone design.
-        </p>
-
-        <a
-          class="button"
-          href="https://link.amazon/A05lwC9Or"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
-
-      </div>
-            <!-- AMAZON - ATTITUDE TINTED SPF -->
-
-      <div class="product">
-
-        <h3>ATTITUDE Oceanly Tinted SPF 30 Stick</h3>
-
-        <p>
-          A Canadian-made, unscented tinted SPF 30 stick
-          featuring zinc oxide and broad-spectrum UVA/UVB
-          protection in a convenient plastic-free format.
-        </p>
-
-        <a
-          class="button"
-          href="https://link.amazon/B08Zb74Xw"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
-
-      </div>
-    </section>
-        <!-- HOME FINDS -->
-
-    <section class="category">
-
-      <h2>🏡 Home Finds</h2>
-
-      <div class="product">
-
-        <h3>Filtered Handheld Shower Head</h3>
-
-        <p>
-          A matte black handheld shower head featuring
-          high-pressure water flow, filtration and 10 spray
-          modes. A practical upgrade for the bathroom.
-        </p>
-
-        <a
-          class="button"
-          href="https://link.amazon/B0j6B10BY"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
-
-      </div>
-      <!-- AMAZON - EUREKA VACUUM -->
-
-      <div class="product">
-
-        <h3>EUREKA Mighty Mite Canister Vacuum</h3>
-
-        <p>
-          ⭐ Personally tried & loved. A lightweight corded
-          canister vacuum for carpets and hard floors. One of
-          my home finds that I've actually used and would
-          recommend based on my own experience.
-        </p>
-
-        <a
-          class="button"
-          href="https://link.amazon/B092x2imK"
-          target="_blank"
-          rel="noopener sponsored"
-        >
-          View on Amazon →
-        </a>
-
-      </div>
-    </section>
     <!-- AFFILIATE DISCLOSURE -->
 
-    <div class="disclosure">
+    <div 
+<!-- AFFILIATE DISCLOSURE -->
 
-      <strong>Affiliate Disclosure</strong>
+<div class="disclosure">
 
-      <p>
-        Some links on Sarah's Picks are affiliate links.
-        If you make a purchase through one of these links,
-        I may earn a commission at no additional cost to you.
-      </p>
+  <strong>Affiliate Disclosure</strong>
 
-      <p>
-        Product information and claims are provided by the
-        respective sellers or manufacturers. Sarah's Picks
-        does not provide medical advice.
-      </p>
+  Some links on Picked by Sarah are affiliate links.
+  If you make a purchase through one of these links,
+  I may earn a commission at no additional cost to you.
+
+  <br><br>
+
+  As an Amazon Associate I earn from qualifying purchases.
+
+  <br><br>
+
+  Product information and claims are provided by
+  the respective sellers or manufacturers.
+  Picked by Sarah does not provide medical advice.
 
     </div>
+
 
   </main>
 
 
+
+  <!-- VALUES -->
+
+  <section class="values">
+
+    <div class="values-inner">
+
+
+      <div class="value">
+
+        <div class="value-icon">♡</div>
+
+        <h3>Curated with Care</h3>
+
+        <p>
+          A collection built around things
+          that caught my attention and felt
+          worth sharing.
+        </p>
+
+      </div>
+
+
+      <div class="value">
+
+        <div class="value-icon">🌿</div>
+
+        <h3>Real Experience</h3>
+
+        <p>
+          When I've personally tried something,
+          I'll tell you so.
+        </p>
+
+      </div>
+
+
+      <div class="value">
+
+        <div class="value-icon">△</div>
+
+        <h3>Explore Something New</h3>
+
+        <p>
+          From useful everyday finds to
+          interesting ideas and products.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- QUOTE -->
+
+  <section class="quote-section">
+
+    <blockquote>
+      “Good things make life a little brighter.”
+    </blockquote>
+
+    <p>— Sarah ♡</p>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 Sarah's Picks • Curated with care 🌿
+
+    <div class="footer-brand">
+      Picked by Sarah 🌿
+    </div>
+
+    <div class="footer-tag">
+      Things Worth Sharing
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="#">Home</a>
+
+      <a href="#garden">Garden</a>
+      
+
+      <a href="#beauty">Beauty</a>
+
+      <a href="#pets">Pets</a>
+
+      <a href="#home">Home</a>
+
+      <a href="#growth">Personal Growth</a>
+
+      <a href="#wellness">Wellness</a>
+
+    </div>
+
+
+    <div class="copyright">
+  <div class="copyright">
+  © 2026 Picked by Sarah • Little finds, lovely things & everything in between. ♡
+</div>
+    </div>
+
+
+    <div class="mountains-back"></div>
+
+    <div class="mountains-front"></div>
+
   </footer>
 
-</body>
 
+</body>
 </html>
