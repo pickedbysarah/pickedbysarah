@@ -1059,7 +1059,288 @@
       }
 
     }
+/* =========================================
+   COZY SARAH + MIA HERO
+========================================= */
 
+.sarah-hero {
+  max-width: 1380px;
+  min-height: 600px;
+
+  margin: 28px auto 65px;
+  padding: 50px;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 40px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(199, 101, 67, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f8f1e4,
+      #e8eee2
+    );
+
+  border: 1px solid rgba(31, 73, 55, 0.12);
+  border-radius: 38px;
+
+  box-shadow:
+    0 22px 60px rgba(31, 73, 55, 0.13);
+}
+
+.sarah-hero::before {
+  content: "🍄";
+  position: absolute;
+  left: 22px;
+  bottom: 18px;
+  font-size: 46px;
+  transform: rotate(-8deg);
+}
+
+.sarah-hero::after {
+  content: "🌿";
+  position: absolute;
+  right: 24px;
+  top: 20px;
+  font-size: 42px;
+  transform: rotate(12deg);
+}
+
+.hero-text-card {
+  position: relative;
+
+  padding: 50px 44px;
+
+  background: rgba(255, 253, 247, 0.94);
+
+  border: 1px solid rgba(31, 73, 55, 0.1);
+
+  border-radius: 30px 12px 30px 12px;
+
+  box-shadow:
+    0 15px 40px rgba(31, 73, 55, 0.09);
+}
+
+.hero-kicker {
+  margin: 0 0 15px;
+
+  color: var(--terracotta);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.hero-text-card h1 {
+  margin: 0 0 24px;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(55px, 6vw, 82px);
+  line-height: 0.92;
+
+  color: var(--forest);
+}
+
+.hero-text-card h1 span {
+  display: block;
+
+  margin-left: 55px;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.18em;
+  font-weight: 600;
+
+  color: var(--terracotta);
+}
+
+.hero-copy {
+  max-width: 440px;
+
+  margin: 0 0 30px;
+
+  color: var(--muted);
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-main-button,
+.hero-second-button {
+  display: inline-block;
+
+  padding: 14px 23px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hero-main-button {
+  background: var(--terracotta);
+  color: white;
+
+  box-shadow:
+    0 8px 20px rgba(173, 82, 53, 0.2);
+}
+
+.hero-second-button {
+  background: transparent;
+
+  color: var(--forest);
+
+  border:
+    1px solid rgba(31, 73, 55, 0.35);
+}
+
+.hero-main-button:hover,
+.hero-second-button:hover {
+  transform: translateY(-2px);
+}
+
+.hero-note-new {
+  margin: 30px 0 0;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 28px;
+
+  color: var(--forest-light);
+
+  transform: rotate(-2deg);
+}
+
+/* MIA */
+
+.mia-side {
+  position: relative;
+
+  padding: 25px;
+
+  text-align: center;
+}
+
+.mia-hero-image {
+  display: block;
+
+  width: 100%;
+  max-width: 680px;
+
+  margin: auto;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 25px 55px rgba(23, 57, 44, 0.23);
+}
+
+.mia-label {
+  position: absolute;
+
+  z-index: 3;
+
+  top: 3px;
+  left: 5px;
+
+  padding: 10px 17px;
+
+  background: rgba(246, 240, 228, 0.96);
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 18px rgba(31, 73, 55, 0.12);
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 30px;
+
+  color: var(--forest);
+
+  transform: rotate(-3deg);
+}
+
+.mia-label small {
+  display: block;
+
+  font-family: 'DM Sans', sans-serif;
+
+  font-size: 10px;
+
+  color: var(--muted);
+}
+
+/* PHONE */
+
+@media (max-width: 900px) {
+
+  .sarah-hero {
+    grid-template-columns: 1fr;
+
+    margin: 20px 15px 50px;
+
+    padding: 25px;
+
+    gap: 20px;
+  }
+
+  .hero-text-card {
+    padding: 38px 27px;
+    text-align: center;
+  }
+
+  .hero-text-card h1 {
+    font-size: 56px;
+  }
+
+  .hero-text-card h1 span {
+    margin-left: 0;
+  }
+
+  .hero-copy {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .mia-side {
+    padding: 15px 0 0;
+  }
+
+  .mia-label {
+    left: 12px;
+  }
+
+  .mia-hero-image {
+    border-radius: 24px;
+  }
+}
   </style>
 </head>
 
@@ -1087,6 +1368,7 @@
       </a>
     </div>
 
+    
   </nav>
 
 
