@@ -105,6 +105,34 @@
       border-radius: 40px;
     }
 
+
+    .favorite-strip p { margin: 0; color: #dce8df; font-size: 13px; }
+
+    .favorite-strip > span {
+      white-space: nowrap;
+      color: #f5d3c4;
+      font-weight: 700;
+    }
+
+    .mushroom-divider {
+      margin-top: 33px;
+      text-align: center;
+      font-size: 21px;
+      opacity: .8;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 10px 22px 80px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 20px auto 80px;
+    } 
+    
     /* HERO */
     .sarah-hero {
       max-width: 1380px;
@@ -415,32 +443,6 @@
       font-size: 23px;
     }
 
-    .favorite-strip p { margin: 0; color: #dce8df; font-size: 13px; }
-
-    .favorite-strip > span {
-      white-space: nowrap;
-      color: #f5d3c4;
-      font-weight: 700;
-    }
-
-    .mushroom-divider {
-      margin-top: 33px;
-      text-align: center;
-      font-size: 21px;
-      opacity: .8;
-    }
-
-    main {
-      max-width: 1180px;
-      margin: auto;
-      padding: 10px 22px 80px;
-    }
-
-    .intro {
-      text-align: center;
-      max-width: 720px;
-      margin: 20px auto 80px;
-    }
 
     .intro-label {
       text-transform: uppercase;
@@ -1005,527 +1007,741 @@
       box-shadow: 0 28px 75px rgba(49,81,63,.13);
     }
 
-    .sarah-hero::before {
-      content: "❦";
-      left: 28px;
-      bottom: 20px;
-      font-size: 42px;
-      color: rgba(49,81,63,.18);
-      transform: rotate(-12deg);
-    }
-
-    .sarah-hero::after {
-      content: "♡";
-      right: 34px;
-      top: 24px;
-      font-size: 42px;
-      color: rgba(201,126,100,.36);
-      transform: rotate(8deg);
-    }
-
-    .hero-text-card {
-      padding: 54px 50px 48px;
-      background:
-        linear-gradient(rgba(255,253,248,.97), rgba(255,249,240,.95));
-      border: 1px solid rgba(201,126,100,.14);
-      border-radius: 34px 12px 34px 12px;
-      box-shadow: 0 20px 55px rgba(49,81,63,.09);
-    }
-
-    .hero-text-card::before {
-      content: "picked with care";
-      position: absolute;
-      right: 24px;
-      top: 20px;
-      font-family: 'Caveat', cursive;
-      font-size: 16px;
-      color: rgba(49,81,63,.45);
-      transform: rotate(4deg);
-    }
-
-    .hero-kicker {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 7px 12px;
-      background: #f7e8df;
-      border-radius: 999px;
-      letter-spacing: 1.8px;
-      font-size: 9px;
-      color: var(--terracotta-dark);
-    }
-
-    .hero-text-card h1 {
-      font-size: clamp(58px, 6.5vw, 90px);
-      line-height: .88;
-      letter-spacing: -2px;
-      margin-bottom: 28px;
-    }
-
-    .hero-text-card h1 span {
-      margin-left: 60px;
-      font-size: 1.16em;
-      color: var(--terracotta);
-      text-shadow: 0 2px 0 rgba(255,255,255,.8);
-    }
-
-    .hero-copy {
-      font-family: 'Playfair Display', serif;
-      color: #4d5f53;
-      font-size: 17px;
-      line-height: 1.8;
-      max-width: 500px;
-      margin-bottom: 12px;
-    }
-
-    .hero-whisper {
-      max-width: 470px;
-      margin: 0 0 28px;
-      color: #758078;
-      font-size: 12px;
-      font-style: italic;
-      letter-spacing: .15px;
-    }
-
-    .hero-main-button,
-    .hero-second-button {
-      border-radius: 999px;
-      padding: 13px 21px;
-      font-size: 12px;
-      letter-spacing: .15px;
-    }
-
-    .hero-main-button {
-      background: linear-gradient(135deg, var(--terracotta), #d4937c);
-      box-shadow: 0 10px 25px rgba(201,126,100,.22);
-    }
-
-    .hero-second-button {
-      background: rgba(255,255,255,.55);
-      border-color: rgba(49,81,63,.18);
-    }
-
-    .hero-note-new {
-      margin-top: 30px;
-      font-size: 24px;
-      color: #6b7f70;
-      transform: rotate(-1deg);
-    }
-
-    .mia-side {
-      padding: 28px 20px;
-    }
-
-    .mia-side::before {
-      content: "";
-      position: absolute;
-      inset: 7% 3% 3% 7%;
-      border-radius: 48% 42% 46% 44%;
-      background:
-        radial-gradient(circle at 35% 25%, rgba(255,255,255,.88), transparent 32%),
-        linear-gradient(145deg, #dfe9df, #f3e2d8);
-      transform: rotate(2deg);
-      z-index: 0;
-    }
-
-    .mia-hero-image {
-      position: relative;
-      z-index: 1;
-      max-width: 630px;
-      border-radius: 46% 42% 45% 40%;
-      border: 8px solid rgba(255,250,242,.90);
-      box-shadow: 0 30px 60px rgba(35,63,49,.18);
-      transform: rotate(-.7deg);
-    }
-
-    .mia-label {
-      top: 12px;
-      left: 8px;
-      background: #fff8ef;
-      border: 1px solid rgba(201,126,100,.18);
-      border-radius: 18px 7px 18px 7px;
-      font-size: 28px;
-      box-shadow: 0 10px 28px rgba(49,81,63,.10);
-    }
-
-    .mia-label small {
-      margin-top: 2px;
-      letter-spacing: .2px;
-    }
-
-    .sarah-ribbon {
-      max-width: 1160px;
-      margin: 0 auto 78px;
-      padding: 18px 22px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      background: rgba(255,250,242,.78);
-      border: 1px solid rgba(49,81,63,.08);
-      border-radius: 18px 34px 18px 34px;
-      box-shadow: 0 16px 40px rgba(49,81,63,.07);
-    }
-
-    .ribbon-item {
-      padding: 16px 18px;
-      text-align: center;
-      position: relative;
-    }
-
-    .ribbon-item + .ribbon-item::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 22%;
-      bottom: 22%;
-      width: 1px;
-      background: rgba(49,81,63,.10);
-    }
-
-    .ribbon-item > span {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
-
-    .ribbon-item strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      color: var(--forest);
-      font-size: 14px;
-      margin-bottom: 4px;
-    }
-
-    .ribbon-item small {
-      display: block;
-      color: #7a857d;
-      font-size: 10px;
-      line-height: 1.45;
-    }
-
-    .cozy-explore {
-      max-width: 1220px;
-      padding: 58px 44px 50px;
-      background:
-        linear-gradient(145deg, rgba(255,252,246,.94), rgba(247,241,232,.91));
-      border: 1px solid rgba(49,81,63,.08);
-      border-radius: 18px 46px 18px 46px;
-      box-shadow: 0 22px 55px rgba(49,81,63,.08);
-    }
-
-    .explore-small {
-      color: var(--terracotta-dark);
-      letter-spacing: 2px;
-    }
-
-    .explore-heading h2 {
-      font-size: clamp(42px, 5vw, 60px);
-      letter-spacing: -.8px;
-    }
-
-    .explore-heading h2 span {
-      color: var(--terracotta);
-    }
-
-    .explore-note {
-      padding: 22px 24px;
-      background: #eef3ec;
-      border: 1px solid rgba(49,81,63,.09);
-      border-radius: 8px 24px 8px 24px;
-      color: #5a6d60;
-      font-size: 21px;
-      line-height: 1.2;
-      transform: rotate(1deg);
-    }
-
-    .cozy-category-grid {
-      gap: 18px;
-    }
-
-    .cozy-category {
-      min-height: 230px;
-      padding: 28px;
-      background: rgba(255,250,242,.9);
-      border-radius: 26px 10px 26px 10px;
-      border: 1px solid rgba(49,81,63,.08);
-      box-shadow: 0 14px 30px rgba(49,81,63,.06);
-    }
-
-    .cozy-category::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(90deg, rgba(201,126,100,.75), rgba(183,214,213,.75));
-    }
-
-    .cozy-category::after {
-      content: "♡";
-      font-family: 'Caveat', cursive;
-      font-size: 38px;
-      color: rgba(49,81,63,.10);
-    }
-
-    .cozy-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-      background: rgba(255,255,255,.62);
-      border-radius: 50%;
-      box-shadow: inset 0 0 0 1px rgba(49,81,63,.07);
-      font-size: 24px;
-    }
-
-    .cozy-category h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    .cozy-category span {
-      font-family: 'Caveat', cursive;
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--terracotta-dark);
-    }
-
-    .favorite-strip {
-      background: linear-gradient(135deg, #2b4a39, #3d604b);
-      border-radius: 16px 36px 16px 36px;
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 18px 40px rgba(35,63,49,.18);
-    }
-
-    .favorite-strip strong {
-      font-size: 24px;
-    }
-
-    main {
-      max-width: 1220px;
-    }
-
-    .intro {
-      margin-top: 90px;
-      margin-bottom: 85px;
-    }
-
-    .intro::before {
-      content: "❦   ♡   ❦";
-      display: block;
-      margin-bottom: 18px;
-      color: rgba(49,81,63,.28);
-      font-size: 18px;
-      letter-spacing: 7px;
-    }
-
-    .intro h2 {
-      font-size: clamp(42px, 5vw, 60px);
-    }
-
-    .category,
-    .favorites {
-      background: rgba(255,250,242,.66);
-      border: 1px solid rgba(49,81,63,.07);
-      border-radius: 18px 44px 18px 44px;
-      box-shadow: 0 20px 48px rgba(49,81,63,.06);
-    }
-
-    .category-heading::after,
-    .favorites-title::after {
-      content: "♡  ❦  ♡";
-      display: block;
-      margin-top: 14px;
-      color: rgba(201,126,100,.45);
-      font-family: 'Caveat', cursive;
-      font-size: 18px;
-      letter-spacing: 5px;
-    }
-
-    .product {
-      background: rgba(255,253,248,.94);
-      border: 1px solid rgba(49,81,63,.07);
-      border-radius: 22px 9px 22px 9px;
-      box-shadow: 0 12px 30px rgba(49,81,63,.06);
-    }
-
-    .product:hover {
-      transform: translateY(-5px) rotate(-.12deg);
-      box-shadow: 0 20px 45px rgba(49,81,63,.10);
-    }
-
-    .product h3 {
-      font-size: 23px;
-      color: #2c4938;
-    }
-
-    .product .button,
-    .button {
-      border-radius: 999px;
-      background: #c97e64;
-      box-shadow: 0 8px 18px rgba(201,126,100,.14);
-    }
-
-    .favorite-card {
-      background: linear-gradient(145deg, #fff9f1, #f4ece5);
-      border-color: rgba(201,126,100,.22);
-    }
-
-    .tried-badge {
-      background: #fff0e7;
-      color: var(--terracotta-dark);
-      border: 1px solid rgba(201,126,100,.20);
-      font-family: 'Caveat', cursive;
-      font-size: 17px;
-      font-weight: 700;
-    }
-
-    .values {
-      background:
-        radial-gradient(circle at 20% 20%, rgba(183,214,213,.13), transparent 30%),
-        linear-gradient(135deg, #233f31, #355a45);
-      border-radius: 42px 14px 42px 14px;
-      margin: 85px 0 0;
-      box-shadow: 0 24px 50px rgba(35,63,49,.18);
-    }
-
-    .sarah-note {
-      max-width: 1120px;
-      margin-top: 105px;
-      margin-bottom: 95px;
-    }
-
-    .sarah-note-paper {
-      background: linear-gradient(145deg, #fffaf2, #fbf3e9);
-      border-color: rgba(201,126,100,.12);
-      border-radius: 38px 12px 38px 12px;
-    }
-
-    .sarah-note-paper::after {
-      content: "a little bit of Sarah ♡";
-      position: absolute;
-      right: 35px;
-      bottom: 28px;
-      font-family: 'Caveat', cursive;
-      font-size: 18px;
-      color: rgba(201,126,100,.58);
-      transform: rotate(-3deg);
-    }
-
-    .sarah-note-side {
-      background: linear-gradient(160deg, #e7efe5, #dfe9df);
-      border: 1px solid rgba(49,81,63,.08);
-      box-shadow: 0 18px 38px rgba(49,81,63,.08);
-    }
-
-    .disclosure {
-      background: rgba(255,250,242,.82);
-      border-radius: 20px 8px 20px 8px;
-    }
-
-    .sarah-footer {
-      margin-top: 95px;
-      background:
-        radial-gradient(circle at 15% 30%, rgba(183,214,213,.10), transparent 23%),
-        linear-gradient(145deg, #203b2e, #2e5240);
-      border-radius: 48px 48px 0 0;
-    }
-
-    .footer-brand-new span {
-      color: #e2a38c;
-    }
-
-    @media (max-width: 1000px) {
-      .sarah-ribbon { grid-template-columns: repeat(2, 1fr); margin: 0 15px 60px; }
-      .ribbon-item:nth-child(3)::before { display: none; }
-      .hero-text-card::before { display: none; }
-      .hero-whisper { margin-left: auto; margin-right: auto; }
-    }
-
-    @media (max-width: 650px) {
-      .sarah-hero {
-        margin: 18px 12px 22px;
-        padding: 18px;
-        border-radius: 32px 14px 32px 14px;
-      }
-      .hero-text-card { padding: 36px 23px 32px; }
-      .hero-text-card h1 { font-size: 55px; }
-      .hero-text-card h1 span { margin-left: 0; }
-      .hero-kicker { line-height: 1.4; }
-      .sarah-ribbon { grid-template-columns: 1fr; padding: 10px; }
-      .ribbon-item + .ribbon-item::before { left: 18%; right: 18%; top: 0; bottom: auto; width: auto; height: 1px; }
-      .ribbon-item:nth-child(3)::before { display: block; }
-      .cozy-explore { margin-left: 12px; margin-right: 12px; padding: 36px 18px; }
-      .explore-heading h2 { font-size: 42px; }
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <nav class="top-nav">
-    <a class="brand" href="#">
-      <div class="brand-name">Picked by <span>Sarah</span> ♡</div>
-      <span class="brand-tagline">little finds • lovely things</span>
-    </a>
-
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#garden">Garden</a>
-      <a href="#beauty">Beauty</a>
-      <a href="#pets">Pets</a>
-      <a href="#hobbies">Hobbies & Skills</a>
-      <a href="#growth">Personal Growth</a>
-      <a href="#wellness">Wellness</a>
-      <a class="nav-favorite" href="#favorites">My Favorites ♡</a>
-    </div>
-  </nav>
-
-  <!-- COZY SARAH + MIA HERO -->
-  <header class="sarah-hero">
-    <div class="hero-text-card">
-      <p class="hero-kicker">A soft little place for curious finds ♡</p>
-
-      <h1>
-        Picked by
-        <span>Sarah</span>
-      </h1>
-
-      <p class="hero-copy">
-        A cozy collection of books, beauty, hobbies, nature, pet picks
-        and little discoveries that make everyday life feel a bit more special.
-      </p>
-
-      <p class="hero-whisper">
-        If it makes life softer, sweeter or more interesting, it probably belongs here.
-      </p>
-
-      <div class="hero-actions">
-        <a class="hero-main-button" href="#picks">Explore My Picks →</a>
-        <a class="hero-second-button" href="#favorites">My Favorites ♡</a>
-      </div>
-
-      <p class="hero-note-new">picked slowly • shared sweetly • always with care ♡</p>
-    </div>
-
-    <div class="mia-side">
-      <div class="mia-label">
-        Mia ♡
-        <small>my little sidekick & quality-control specialist 🐾</small>
-      </div>
-
-      <img src="mia.png" alt="Illustration of Mia surrounded by flowers and mushrooms" class="mia-hero-image">
-    </div>
-  </header>
-
-  <section class="sarah-ribbon" aria-label="What you will find here">
-    <div class="ribbon-item"><span>♡</span><strong>Thoughtfully Curated</strong><small>things that feel useful, lovely or worth a look</small></div>
-    <div class="ribbon-item"><span>🍄</span><strong>Curious Little Finds</strong><small>for hobbies, nature, learning and everyday joy</small></div>
-    <div class="ribbon-item"><span>📖</span><strong>A Kinder Corner</strong><small>books, ideas and things that help life feel more like you</small></div>
-    <div class="ribbon-item"><span>🐾</span><strong>Mia Is Here Too</strong><small>because every good website needs a dog nearby</small></div>
-  </section>
+   /* =========================================
+   COZY COTTAGE HERO
+========================================= */
+
+.cottage-hero {
+  max-width: 1400px;
+  min-height: 620px;
+  margin: 28px auto 70px;
+
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+
+  position: relative;
+  overflow: hidden;
+
+  background: #f8f1e5;
+
+  border: 1px solid rgba(31, 73, 55, .12);
+  border-radius: 36px 14px 36px 14px;
+
+  box-shadow: 0 25px 65px rgba(31, 73, 55, .14);
+}
+
+
+/* LEFT SIDE */
+
+.cottage-copy {
+  position: relative;
+  z-index: 10;
+
+  padding: 65px 55px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 251, 241, .98),
+      rgba(247, 238, 222, .96)
+    );
+}
+
+.cottage-copy::before {
+  content: "🌿";
+
+  position: absolute;
+  left: 22px;
+  top: 20px;
+
+  font-size: 28px;
+  opacity: .65;
+
+  transform: rotate(-15deg);
+}
+
+.cottage-copy::after {
+  content: "🍄";
+
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+
+  font-size: 36px;
+}
+
+.cottage-kicker {
+  width: fit-content;
+
+  margin-bottom: 18px;
+  padding: 8px 16px;
+
+  background: #f4ded2;
+
+  border-radius: 30px;
+
+  color: var(--terracotta);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+.cottage-copy h1 {
+  margin: 0 0 28px;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(58px, 6vw, 88px);
+  line-height: .88;
+
+  color: var(--forest);
+}
+
+.cottage-copy h1 span {
+  display: block;
+
+  margin-left: 65px;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.15em;
+  font-weight: 600;
+
+  color: var(--terracotta);
+}
+
+.cottage-intro {
+  max-width: 470px;
+
+  margin: 0 0 14px;
+
+  color: #53675c;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.cottage-whisper {
+  max-width: 460px;
+
+  margin: 0 0 28px;
+
+  color: #758178;
+
+  font-size: 13px;
+  font-style: italic;
+
+  line-height: 1.6;
+}
+
+.cottage-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cottage-main-button,
+.cottage-soft-button {
+  display: inline-block;
+
+  padding: 14px 23px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cottage-main-button {
+  background: var(--terracotta);
+  color: white;
+
+  box-shadow: 0 10px 23px rgba(173, 82, 53, .20);
+}
+
+.cottage-soft-button {
+  background: rgba(255,255,255,.5);
+
+  color: var(--forest);
+
+  border: 1px solid rgba(31, 73, 55, .25);
+}
+
+.cottage-signoff {
+  margin-top: 34px;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 24px;
+
+  color: var(--forest-light);
+}
+
+
+/* RIGHT COTTAGE SCENE */
+
+.cottage-scene {
+  min-height: 620px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ead6c5 0%,
+      #d8dfcc 35%,
+      #789381 67%,
+      #405f50 100%
+    );
+}
+
+
+/* SUN */
+
+.sun-glow {
+  width: 310px;
+  height: 310px;
+
+  position: absolute;
+  left: 7%;
+  top: 35px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 225, 169, .95),
+      rgba(247, 185, 131, .40) 35%,
+      transparent 72%
+    );
+}
+
+
+/* MOUNTAINS */
+
+.mountain {
+  position: absolute;
+
+  left: -10%;
+
+  width: 120%;
+
+  clip-path:
+    polygon(
+      0 100%,
+      0 65%,
+      12% 42%,
+      21% 58%,
+      34% 29%,
+      48% 59%,
+      61% 38%,
+      74% 60%,
+      88% 35%,
+      100% 58%,
+      100% 100%
+    );
+}
+
+.mountain-one {
+  height: 260px;
+  top: 170px;
+
+  background: #708575;
+
+  opacity: .65;
+}
+
+.mountain-two {
+  height: 225px;
+  top: 225px;
+
+  background: #496b58;
+
+  opacity: .85;
+}
+
+
+/* TREES */
+
+.tree-line {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 300px;
+
+  height: 150px;
+
+  background-color: #274d3b;
+
+  clip-path:
+    polygon(
+      0 100%,
+      0 70%,
+      5% 35%,
+      10% 70%,
+      15% 25%,
+      20% 72%,
+      27% 30%,
+      34% 70%,
+      42% 20%,
+      50% 72%,
+      58% 28%,
+      66% 70%,
+      74% 20%,
+      82% 70%,
+      90% 28%,
+      100% 65%,
+      100% 100%
+    );
+}
+
+
+/* WATER */
+
+.lake {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 245px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #78988a,
+      #527969 45%,
+      #315848
+    );
+}
+
+.lake::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 35px;
+
+  height: 100px;
+
+  opacity: .30;
+
+  background:
+    repeating-linear-gradient(
+      180deg,
+      rgba(255,255,255,.38) 0 2px,
+      transparent 2px 13px
+    );
+}
+
+.water-shine {
+  width: 170px;
+  height: 210px;
+
+  position: absolute;
+
+  left: 11%;
+  top: -20px;
+
+  opacity: .6;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 220, 168, .55),
+      transparent
+    );
+
+  clip-path:
+    polygon(
+      40% 0,
+      60% 0,
+      95% 100%,
+      5% 100%
+    );
+}
+
+
+/* COTTAGE */
+
+.little-cottage {
+  width: 255px;
+  height: 230px;
+
+  position: absolute;
+
+  right: 9%;
+  bottom: 175px;
+
+  z-index: 8;
+}
+
+.house {
+  width: 220px;
+  height: 145px;
+
+  position: absolute;
+
+  left: 17px;
+  bottom: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #9a684a,
+      #bb8160
+    );
+
+  border: 4px solid #5b493b;
+
+  box-shadow: 0 15px 30px rgba(20,40,30,.28);
+}
+
+.roof {
+  width: 260px;
+  height: 120px;
+
+  position: absolute;
+
+  left: -3px;
+  top: 2px;
+
+  z-index: 4;
+
+  background: #344b3e;
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 100%,
+      0 100%
+    );
+}
+
+.chimney {
+  width: 27px;
+  height: 68px;
+
+  position: absolute;
+
+  right: 38px;
+  top: 17px;
+
+  z-index: 3;
+
+  background: #725347;
+
+  border: 3px solid #493a33;
+}
+
+
+/* WINDOWS */
+
+.window {
+  width: 46px;
+  height: 49px;
+
+  position: absolute;
+
+  top: 35px;
+
+  z-index: 3;
+
+  border: 5px solid #5b493b;
+
+  background: #ffd68f;
+
+  box-shadow:
+    0 0 23px rgba(255, 200, 100, .75);
+}
+
+.window-one {
+  left: 25px;
+}
+
+.window-two {
+  right: 25px;
+}
+
+
+/* DOOR */
+
+.door {
+  width: 50px;
+  height: 78px;
+
+  position: absolute;
+
+  left: 83px;
+  bottom: 0;
+
+  z-index: 3;
+
+  background: #4a5c48;
+
+  border: 4px solid #55463b;
+
+  border-radius: 12px 12px 0 0;
+}
+
+.door span {
+  width: 7px;
+  height: 7px;
+
+  position: absolute;
+
+  right: 7px;
+  top: 37px;
+
+  border-radius: 50%;
+
+  background: #d7ad65;
+}
+
+
+/* DOCK */
+
+.dock {
+  width: 290px;
+  height: 28px;
+
+  position: absolute;
+
+  right: 7%;
+  bottom: 135px;
+
+  z-index: 9;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #6f503c 0 32px,
+      #4d3b31 32px 35px
+    );
+}
+
+.dock-light {
+  width: 12px;
+  height: 35px;
+
+  position: absolute;
+
+  left: 55px;
+  top: -37px;
+
+  background: #263c31;
+}
+
+.dock-light::after {
+  content: "";
+
+  width: 18px;
+  height: 23px;
+
+  position: absolute;
+
+  left: -3px;
+  top: -16px;
+
+  border-radius: 5px;
+
+  background: #ffd38d;
+
+  box-shadow: 0 0 22px #ffc46f;
+}
+
+
+/* MUSHROOMS */
+
+.mushroom {
+  width: 38px;
+  height: 52px;
+
+  position: absolute;
+
+  z-index: 12;
+}
+
+.mushroom span {
+  width: 11px;
+  height: 33px;
+
+  position: absolute;
+
+  left: 14px;
+  bottom: 0;
+
+  border-radius: 7px;
+
+  background: #ead7ba;
+}
+
+.mushroom::before {
+  content: "";
+
+  width: 38px;
+  height: 24px;
+
+  position: absolute;
+
+  border-radius: 38px 38px 10px 10px;
+
+  background: #c76543;
+}
+
+.mushroom-one {
+  left: 5%;
+  bottom: 45px;
+}
+
+.mushroom-two {
+  left: 11%;
+  bottom: 25px;
+
+  transform: scale(.72);
+}
+
+.mushroom-three {
+  right: 4%;
+  bottom: 35px;
+
+  transform: scale(.85);
+}
+
+
+/* GREENERY */
+
+.cozy-grass {
+  position: absolute;
+
+  z-index: 11;
+
+  font-size: 55px;
+}
+
+.grass-left {
+  left: 0;
+  bottom: 0;
+}
+
+.grass-right {
+  right: 0;
+  bottom: 0;
+}
+
+
+/* LITTLE NOTE */
+
+.cottage-note {
+  position: absolute;
+
+  right: 25px;
+  top: 25px;
+
+  z-index: 13;
+
+  padding: 14px 18px;
+
+  background:
+    rgba(255, 248, 232, .90);
+
+  border-radius:
+    7px 17px 7px 17px;
+
+  box-shadow:
+    0 8px 20px rgba(31,73,55,.13);
+
+  color:
+    var(--forest);
+
+  font-family:
+    'Caveat',
+    cursive;
+
+  font-size: 23px;
+  line-height: 1.05;
+
+  text-align: center;
+
+  transform: rotate(2deg);
+}
+
+
+/* PHONE */
+
+@media (max-width: 900px) {
+
+  .cottage-hero {
+    grid-template-columns: 1fr;
+
+    margin:
+      20px 14px 60px;
+  }
+
+  .cottage-copy {
+    padding:
+      48px 30px;
+
+    text-align: center;
+  }
+
+  .cottage-copy h1 {
+    font-size: 62px;
+  }
+
+  .cottage-copy h1 span {
+    margin-left: 0;
+  }
+
+  .cottage-intro,
+  .cottage-whisper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cottage-buttons {
+    justify-content: center;
+  }
+
+  .cottage-kicker {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cottage-scene {
+    min-height: 500px;
+  }
+
+  .little-cottage {
+    right: 8%;
+
+    transform: scale(.82);
+
+    transform-origin:
+      bottom right;
+  }
+
+}
 
   <!-- EXPLORE -->
   <section class="cozy-explore">
